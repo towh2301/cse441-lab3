@@ -54,5 +54,10 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         color: 'black',
+    },
+    erorrText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'red',
     }
 });
