@@ -1,6 +1,7 @@
 // src/navigation/HomeStackNavigator.tsx
 import HomeProductScreen from "@/src/screens/home/HomeProductScreen";
 import ProductDetails from "@/src/screens/product/ProductDetails"; // Adjust path as needed
+import SearchProductScreen from "@/src/screens/search/SearchProductScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { RootStackParamList } from "../types";
 
@@ -20,7 +21,13 @@ export default function HomeStackNavigator() {
                 options={{
                     headerShown: false
                 }}
-
+            />
+            <HomeStack.Screen
+                name="SearchProductScreen"
+                component={SearchProductScreen}
+                options={{
+                    headerShown: false
+                }}
             />
         </HomeStack.Navigator>
     );

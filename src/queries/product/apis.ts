@@ -1,7 +1,7 @@
 import { API_URL } from "@/src/constants/keys";
 import httpPublicRequest from "@/src/utils/httpPublicRequest";
 import { ApiResponseType, PaginationResponseType } from "../helpers";
-import { ProductResponse } from "./types";
+import { ProductCreationRequest, ProductResponse } from "./types";
 
 const useApis = (baseUrl = API_URL) => {
     const publicApi = httpPublicRequest(baseUrl);
@@ -14,18 +14,19 @@ const useApis = (baseUrl = API_URL) => {
         return response.data;
     } // Trả về dữ liệu trực tiếp
 
-    const addNewProduct = (data: ProductResponse) => {
-        return publicApi.post('/products/add', data)
-    }
+    const searchProduct = async (query: string) => {
+        const response = await publicApi.get(`/products/search?q=${query}`);
+        return response.data;
+    };
 
-    const searchProduct = (query: string) => {
-        return publicApi.get(`/products/search?q=${query}`)
+    const addProduct = async (payload: ProductCreationRequest) => {
+        return await publicApi.post('/products/add', payload)
     }
 
     return {
         getAllProducts,
-        addNewProduct,
-        searchProduct
+        searchProduct,
+        addProduct
     }
 };
 

@@ -1,6 +1,6 @@
 // src/navigation/TabNavigator.tsx
 import AboutScreen from "@/src/screens/about/AboutScreen";
-import AddProductScreen from "@/src/screens/add/AddProductScreen";
+import { AddProductScreen } from "@/src/screens/add/AddProductScreen";
 import SearchProductScreen from "@/src/screens/search/SearchProductScreen";
 import { AppTheme } from "@/src/screens/styles";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
